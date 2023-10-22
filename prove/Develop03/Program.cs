@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
+        Reference reference = new Reference();
+        string refer = reference.GetReference();
+        Console.Write(refer);
+
         Scripture scripture = new Scripture();
         scripture.PrintScripture();
 
@@ -13,6 +17,7 @@ class Program
         while(prompt.ShouldContinue() && scripture.HasWordToHide())
         {
             Console.Clear();
+            Console.Write(refer);
             scripture.WriteScriptureWithHiddenWords();
             prompt.PromptContinue();
         }
