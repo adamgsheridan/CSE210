@@ -3,12 +3,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        
+
         Menu menu = new Menu();
         string _selectedActivity = menu.DisplayMenu();
 
         Activity activity = new Activity();
-        while(_selectedActivity != "3")
+        while (_selectedActivity != "3")
         {
             if (_selectedActivity == "0")
             {
@@ -36,8 +36,8 @@ class Program
             }
             Console.Clear();
             _selectedActivity = menu.DisplayMenu();
-            
-            
+
+
         }
     }
 }

@@ -1,9 +1,13 @@
 using System;
-
-class Program
+namespace Learning05
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello Learning05 World!");
+        static void Main(string[] args)
+        {
+            Square square = new Square();
+            
+            Console.WriteLine("Hello Learning05 World!");
+        }
     }
 }
