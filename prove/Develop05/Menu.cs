@@ -1,7 +1,5 @@
 class Menu
 {
-    private int _goalType;
-
     public void DisplayMenu()
     {
         Console.WriteLine("Menu Options:\n\t1. Create new goal\n\t2. List goals\n\t3. Save goals\n\t4. Load goals\n\t5. Record event\n\t6. Quit");
@@ -20,6 +18,6 @@ class Menu
     public int GetGoalType()
     {
         Console.Write("Which type of goal would you like to create: ");
-        return _goalType;
+        return int.Parse(Console.ReadLine());
     }
 }
