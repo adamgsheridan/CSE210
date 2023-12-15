@@ -11,30 +11,10 @@ class CheckingAccount : Account
         this._overdraftFee = _overdraftFee;
     }
 
-    public override float GetOverdraftFee()
+    public static float GetOverdraftFee()
     {
         Console.WriteLine("How much are overdraft fees for the new account? ");
         return int.Parse(Console.ReadLine());
     }
 
-    // public int GetAccountNumber(Account tempAcc)
-    // {
-    //     Console.Write("What is the Account Number of the account that you want to use to calculate interest.");
-    //     int tempAccNum = int.Parse(Console.ReadLine());
-    //     if(_accountNumber == tempAccNum)
-    //     {
-    //         return 
-    //     }
-    // }
-    public override bool CompareAccount(Account account, int tempAccNum)
-    {
-        if(tempAccNum == _accountNumber)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 }

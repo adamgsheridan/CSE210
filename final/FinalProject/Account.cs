@@ -35,22 +35,11 @@ class Account
         Console.WriteLine("What is the new account's Routing Number? ");
         return int.Parse(Console.ReadLine());
     }
-    virtual public float GetOverdraftFee()
-    {
-        return 0;
-    }
 
-    virtual public float GetInterestRate()
-    {
-        return 0;
-    }
-
-    virtual public int GetTransactionLimit()
-    {
-        return 0;
-    }
     virtual public bool CompareAccount(Account account, int tempAccNum)
     {
         return false;
     }
+    virtual public void GetInterest(Account account)
+    {}
 }

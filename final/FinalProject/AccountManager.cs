@@ -1,5 +1,3 @@
-using System.Diagnostics.Metrics;
-
 class AccountManager
 {
     public List<Account> _account = new List<Account>();
@@ -25,5 +23,6 @@ class AccountManager
                 return acc;
             }
         }
+        return null;
     }
 }

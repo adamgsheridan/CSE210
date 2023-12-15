@@ -6,37 +6,45 @@ class Program
         Account account = new Account();
         Menu menu = new Menu();
         int mainSelector = menu.MainMenu();
-        AccountManager accountManager = new AccountManager();
-        if(mainSelector == 1)
+        while(mainSelector != 6)
         {
-            int newAcc = menu.CreationMenu();
-            string name = account.GetName();
-            float balance = account.GetBalance();
-            string address = account.GetAddress();
-            int accountNumber = account.GetAccountNumber();
-            int routingNumber = account.GetRoutingNumber();
-            if(newAcc == 1)
+            AccountManager accountManager = new AccountManager();
+        
+            if(mainSelector == 1)
             {
-                float overdraftFee = account.GetOverdraftFee();
-                Account newChecking = new CheckingAccount(name, balance, address, accountNumber, routingNumber, overdraftFee);
-                accountManager.CreateAccount(newChecking);
+                int newAcc = menu.CreationMenu();
+                string name = account.GetName();
+                float balance = account.GetBalance();
+                string address = account.GetAddress();
+                int accountNumber = account.GetAccountNumber();
+                int routingNumber = account.GetRoutingNumber();
+                if(newAcc == 1)
+                {
+                    float overdraftFee = CheckingAccount.GetOverdraftFee();
+                    Account newChecking = new CheckingAccount(name, balance, address, accountNumber, routingNumber, overdraftFee);
+                    accountManager.CreateAccount(newChecking);
+                }
+                else if(newAcc == 2)
+                {
+                    float interestRate = SavingsAccount.GetInterestRate();
+                    int transactionLimit = SavingsAccount.GetTransactionLimit();
+                    Account newSavings = new SavingsAccount(name, balance, address, accountNumber, routingNumber, interestRate, transactionLimit);
+                    accountManager.CreateAccount(newSavings);
+                }
+                
             }
-            else if(newAcc == 2)
+            else if (mainSelector == 2)
             {
-                float interestRate = account.GetInterestRate();
-                int transactionLimit = account.GetTransactionLimit();
-                Account newSavings = new SavingsAccount(name, balance, address, accountNumber, routingNumber, interestRate, transactionLimit);
-                accountManager.CreateAccount(newSavings);
+                Account interestAccount = accountManager.GetAccount();
+                account.GetInterest(interestAccount);
             }
-            
+            else if (mainSelector == 3)
+            {}
+            else if (mainSelector == 4)
+            {}
+            else if (mainSelector == 5)
+            {}
+            mainSelector = menu.MainMenu();
         }
-        else if (mainSelector == 2)
-        {}
-        else if (mainSelector == 3)
-        {}
-        else if (mainSelector == 4)
-        {}
-        else if (mainSelector == 5)
-        {}
     }
 }
