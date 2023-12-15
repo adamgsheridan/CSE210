@@ -1,10 +1,9 @@
 class SimpleGoal : Goal
 {
-
-
-    public override void CheckGoal()
+    public override int CheckGoal()
     {
         _isChecked = true;
+        return _points;
     }
     public SimpleGoal(string _name, string _description, int _points, bool _isChecked)
     {

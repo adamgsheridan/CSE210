@@ -3,13 +3,22 @@ class ChecklistGoal : Goal
     private int _goalsChecked = 0;
     private int _bonus;
     private int _checkMax;
-
-    public override void CheckGoal()
+    public override int CheckGoal()
     {
         _goalsChecked++;
         if(_checkMax == _goalsChecked)
         {
             _isChecked = true;
+            return _bonus + _points;
+        }
+        else if(_checkMax < _goalsChecked)
+        {
+            return _points;
+        }
+        else
+        {
+            _goalsChecked--;
+            return 0;
         }
     }
     public void SetTotalPoint()
@@ -37,7 +46,6 @@ class ChecklistGoal : Goal
     public override void DisplayContents(int count)
     {
         string _check;
-        //Goal _goal = new Goal();
         if(IsChecked())
         {
             _check = "[X]";

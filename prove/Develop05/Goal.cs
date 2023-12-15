@@ -4,7 +4,6 @@ class Goal
     protected string _description;
     protected int _points;
     protected bool _isChecked = false;
-
     public string GetName()
     {
         Console.Write("What is the name of your goal? ");
@@ -18,7 +17,7 @@ class Goal
         return description;
     }
     public void SetText()
-    { }
+    {}
 
     public int GetPoints()
     {
@@ -26,14 +25,16 @@ class Goal
         return int.Parse(Console.ReadLine());
     }
     public void AddPoints()
-    { }
-    virtual public void CheckGoal()
-    { }
+    {}
+    virtual public int CheckGoal()
+    {
+        return 0;
+    }
 
     virtual public void DisplayContents(int count)
-    { }
+    {}
     virtual public void DisplayGoalName()
-    { }
+    {}
     public bool IsChecked()
     {
         return _isChecked;

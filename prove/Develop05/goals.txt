@@ -1,5 +1,1 @@
-SimpleGoal:dfgh|gyhjk|5|False
-EternalGoal:fghkj|yuhj|4
-SimpleGoal:grant|big bro|5|False
-SimpleGoal:hello|please work|10|False
-SimpleGoal:hello world|hello to the world|100|False
+0
