@@ -5,26 +5,26 @@ class Program
     static void Main(string[] args)
     {
         Menu menu = new Menu();
-        int _selector = 0;
-        int _goalType;
+        int selector = 0;
+        int goalType;
 
         GoalManager goalManager = new GoalManager();
         Goal goal = new Goal();
 
-        while (_selector != 6)
+        while (selector != 6)
         {
             goalManager.DisplayPoints();
             menu.DisplayMenu();
-            _selector = menu.GetSelector();
-            if (_selector == 1)
+            selector = menu.GetSelector();
+            if (selector == 1)
             {
 
                 menu.DisplayGoalTypes();
-                _goalType = menu.GetGoalType();
+                goalType = menu.GetGoalType();
                 string name = goal.GetName();
                 string description = goal.GetDescription();
                 int points = goal.GetPoints();
-                if (_goalType == 1)
+                if (goalType == 1)
                 {
                     // Simple goal.
                     bool isChecked = goal.IsChecked();
@@ -32,13 +32,13 @@ class Program
 
                     goalManager.AddGoal(simpleGoal);
                 }
-                else if (_goalType == 2)
+                else if (goalType == 2)
                 {
                     // Eternal goal.
                     Goal eternalGoal = new EternalGoal(name, description, points);
                     goalManager.AddGoal(eternalGoal);
                 }
-                else if (_goalType == 3)
+                else if (goalType == 3)
                 {
                     // Checklist goal.
                     int checkMax = ChecklistGoal.GetCheckMax();
@@ -48,21 +48,21 @@ class Program
                     goalManager.AddGoal(checklistGoal);
                 }
             }
-            else if (_selector == 2)
+            else if (selector == 2)
             {
                 goalManager.ListGoals();
             }
-            else if (_selector == 3)
+            else if (selector == 3)
             {
                 goalManager.SavePoints();
                 goalManager.SaveGoals();
             }
-            else if (_selector == 4)
+            else if (selector == 4)
             {
                 goalManager.LoadPoints();
                 goalManager.LoadGoals();
             }
-            else if (_selector == 5)
+            else if (selector == 5)
             {
                 goalManager.RecordGoals();
             }

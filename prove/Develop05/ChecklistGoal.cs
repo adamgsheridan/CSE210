@@ -45,16 +45,16 @@ class ChecklistGoal : Goal
     }
     public override void DisplayContents(int count)
     {
-        string _check;
+        string check;
         if(IsChecked())
         {
-            _check = "[X]";
+            check = "[X]";
         }
         else
         {
-            _check = "[ ]";
+            check = "[ ]";
         }
-        Console.WriteLine($"{count}. {_check} {_name} ({_description}) -- Currently Completed: {_goalsChecked}/{_checkMax}");
+        Console.WriteLine($"{count}. {check} {_name} ({_description}) -- Currently Completed: {_goalsChecked}/{_checkMax}");
     }
     public override void DisplayGoalName()
     {
